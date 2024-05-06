@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Map HuaHin </title>
+<link rel="stylesheet" href=https://unpkg.com/leaflet@1.9.3/dist/leaflet.css integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+
+<script src=https://unpkg.com/leaflet@1.9.3/dist/leaflet.js integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+
+<body>
+<div id="map" style="height: 600px"></div>
+
+<script>
+var map = L.map('map').setView([12.47899258003816, 99.95035703125984], 10);
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+var greenIcon = L.icon({
+iconUrl: 'pin-icon_34381.png',
+iconSize:     [30, 30], // size of the icon
+iconAnchor:   [45, 45], // point of the icon which will correspond to marker's location
+popupAnchor:  [0, -39] // point from which the popup should open relative to the iconAnchor		
+});
+
+
+L.marker([12.574864275682383, 99.82234686237375],{icon:greenIcon}).addTo(map).bindPopup("<b>วัดห้วยมงคล</b><br>อ.หัวหิน จ.ประจวบคีรีขันธ์<br>");
+
+L.marker([12.600247899122659, 99.95629535983649],{icon:greenIcon}).addTo(map).bindPopup("<b>ตลาดโต้รุ่ง</b><br>อ.หัวหิน จ.ประจวบคีรีขันธ์<br>");
+
+L.marker([12.250242857052104, 99.93364428284654],{icon:greenIcon}).addTo(map).bindPopup("<b>ศูนย์ศึกษาธรรมชาติ อุทยานสามร้อยยอด</b><br>อ.สามร้อยยอด จ.ประจวบคีรีขันธ์<br>");
+
+L.marker([12.211507206339752, 100.0128603304605],{icon:greenIcon}).addTo(map).bindPopup("<b>ถ้ำพระยานคร</b><br>อ.สามร้อยยอด จ.ประจวบคีรีขันธ์<br>");
+
+L.marker([12.562510050174847, 99.96281924135941],{icon:greenIcon}).addTo(map).bindPopup("<b>สวนน้ำวานา นาวา</b><br>อ.หัวหิน จ.ประจวบคีรีขันธ์<br>");
+</script>
+</body>
+</html>
